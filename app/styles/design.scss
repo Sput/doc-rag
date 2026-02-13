@@ -1,0 +1,37 @@
+// App design layer (SCSS)
+// - Keeps tokens and mixins separate from Tailwind’s globals.css
+// - Safe to load alongside Tailwind v4
+
+@use "./variables" as *;
+@use "./mixins" as mixins;
+
+// CSS custom props bridged from SCSS variables (optional)
+:root {
+  --radius: #{$radius};
+  --spacing-unit: #{$spacing-unit};
+  --brand-primary: #{$brand-primary};
+  --brand-accent: #{$brand-accent};
+}
+
+// Example base tweaks (keep minimal if using Tailwind)
+h1, h2, h3 {
+  color: $text;
+}
+
+.container {
+  @include mixins.container();
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-unit;
+  padding: $spacing-unit * 1.5 $spacing-unit * 2;
+  border-radius: $radius;
+  background: $brand-primary;
+  color: $text-invert;
+  transition: filter 120ms ease;
+
+  &:hover { filter: brightness(0.95); }
+  &:focus-visible { @include mixins.focus-ring($brand-primary); }
+}

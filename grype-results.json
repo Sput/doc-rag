@@ -1,0 +1,2271 @@
+{
+    "matches": [
+        {
+            "vulnerability": {
+                "id": "GHSA-cx63-2mw6-8hw5",
+                "dataSource": "https://github.com/advisories/GHSA-cx63-2mw6-8hw5",
+                "namespace": "github:language:python",
+                "severity": "High",
+                "urls": [],
+                "description": "setuptools vulnerable to Command Injection via package URL",
+                "cvss": [
+                    {
+                        "type": "Secondary",
+                        "version": "3.1",
+                        "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                        "metrics": {
+                            "baseScore": 8.8,
+                            "exploitabilityScore": 2.9,
+                            "impactScore": 5.9
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2024-6345",
+                        "epss": 0.04814,
+                        "percentile": 0.8918,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2024-6345",
+                        "cwe": "CWE-94",
+                        "source": "security@huntr.dev",
+                        "type": "Secondary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "70.0.0"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "70.0.0",
+                            "date": "2024-07-16",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 3.923410000000001
+            },
+            "relatedVulnerabilities": [
+                {
+                    "id": "CVE-2024-6345",
+                    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2024-6345",
+                    "namespace": "nvd:cpe",
+                    "severity": "High",
+                    "urls": [
+                        "https://github.com/pypa/setuptools/commit/88807c7062788254f654ea8c03427adc859321f0",
+                        "https://huntr.com/bounties/d6362117-ad57-4e83-951f-b8141c6e7ca5",
+                        "https://lists.debian.org/debian-lts-announce/2024/09/msg00018.html"
+                    ],
+                    "description": "A vulnerability in the package_index module of pypa/setuptools versions up to 69.1.1 allows for remote code execution via its download functions. These functions, which are used to download packages from URLs provided by users or retrieved from package index servers, are susceptible to code injection. If these functions are exposed to user-controlled inputs, such as package URLs, they can execute arbitrary commands on the system. The issue is fixed in version 70.0.",
+                    "cvss": [
+                        {
+                            "source": "security@huntr.dev",
+                            "type": "Secondary",
+                            "version": "3.0",
+                            "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                            "metrics": {
+                                "baseScore": 8.8,
+                                "exploitabilityScore": 2.9,
+                                "impactScore": 5.9
+                            },
+                            "vendorMetadata": {}
+                        }
+                    ],
+                    "epss": [
+                        {
+                            "cve": "CVE-2024-6345",
+                            "epss": 0.04814,
+                            "percentile": 0.8918,
+                            "date": "2026-01-20"
+                        }
+                    ],
+                    "cwes": [
+                        {
+                            "cve": "CVE-2024-6345",
+                            "cwe": "CWE-94",
+                            "source": "security@huntr.dev",
+                            "type": "Secondary"
+                        }
+                    ]
+                }
+            ],
+            "matchDetails": [
+                {
+                    "type": "exact-direct-match",
+                    "matcher": "python-matcher",
+                    "searchedBy": {
+                        "language": "python",
+                        "namespace": "github:language:python",
+                        "package": {
+                            "name": "setuptools",
+                            "version": "63.2.0"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "GHSA-cx63-2mw6-8hw5",
+                        "versionConstraint": "<70.0.0 (python)"
+                    },
+                    "fix": {
+                        "suggestedVersion": "70.0.0"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "797b23a436056b9e",
+                "name": "setuptools",
+                "version": "63.2.0",
+                "type": "python",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/METADATA",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/METADATA",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/RECORD",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/RECORD",
+                        "annotations": {
+                            "evidence": "supporting"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/top_level.txt",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/top_level.txt",
+                        "annotations": {
+                            "evidence": "supporting"
+                        }
+                    }
+                ],
+                "language": "python",
+                "licenses": [
+                    "MIT"
+                ],
+                "cpes": [
+                    "cpe:2.3:a:python:setuptools:63.2.0:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:pypi/setuptools@63.2.0",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "CVE-2025-9951",
+                "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2025-9951",
+                "namespace": "nvd:cpe",
+                "severity": "High",
+                "urls": [
+                    "https://github.com/google/security-research/security/advisories/GHSA-39q3-f8jq-v6mg"
+                ],
+                "description": "A heap-buffer-overflow write exists in jpeg2000dec FFmpeg which allows an attacker to potentially gain remote code execution or cause denial of service via the channel definition cdef atom of JPEG2000.",
+                "cvss": [
+                    {
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary",
+                        "version": "4.0",
+                        "vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:N/VI:H/VA:H/SC:N/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+                        "metrics": {
+                            "baseScore": 7.2
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2025-9951",
+                        "epss": 0.00611,
+                        "percentile": 0.69193,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2025-9951",
+                        "cwe": "CWE-122",
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "7.1.2"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "7.1.2",
+                            "date": "2025-09-18",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.449085
+            },
+            "relatedVulnerabilities": [],
+            "matchDetails": [
+                {
+                    "type": "cpe-match",
+                    "matcher": "stock-matcher",
+                    "searchedBy": {
+                        "namespace": "nvd:cpe",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                        ],
+                        "package": {
+                            "name": "ffmpeg",
+                            "version": "7.1.1"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "CVE-2025-9951",
+                        "versionConstraint": "< 7.1.2 (unknown)",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*"
+                        ]
+                    },
+                    "fix": {
+                        "suggestedVersion": "7.1.2"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "efd32f8f4c10be64",
+                "name": "ffmpeg",
+                "version": "7.1.1",
+                "type": "binary",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    }
+                ],
+                "language": "",
+                "licenses": [],
+                "cpes": [
+                    "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:generic/ffmpeg@7.1.1",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "GHSA-r9hx-vwmv-q579",
+                "dataSource": "https://github.com/advisories/GHSA-r9hx-vwmv-q579",
+                "namespace": "github:language:python",
+                "severity": "High",
+                "urls": [],
+                "description": "pypa/setuptools vulnerable to Regular Expression Denial of Service (ReDoS)",
+                "cvss": [
+                    {
+                        "type": "Secondary",
+                        "version": "3.1",
+                        "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                        "metrics": {
+                            "baseScore": 7.5,
+                            "exploitabilityScore": 3.9,
+                            "impactScore": 3.6
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2022-40897",
+                        "epss": 0.00515,
+                        "percentile": 0.65988,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2022-40897",
+                        "cwe": "CWE-1333",
+                        "source": "nvd@nist.gov",
+                        "type": "Primary"
+                    },
+                    {
+                        "cve": "CVE-2022-40897",
+                        "cwe": "CWE-1333",
+                        "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+                        "type": "Secondary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "65.5.1"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "65.5.1",
+                            "date": "2022-12-28",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.38625
+            },
+            "relatedVulnerabilities": [
+                {
+                    "id": "CVE-2022-40897",
+                    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-40897",
+                    "namespace": "nvd:cpe",
+                    "severity": "Medium",
+                    "urls": [
+                        "https://github.com/pypa/setuptools/blob/fe8a98e696241487ba6ac9f91faa38ade939ec5d/setuptools/package_index.py#L200",
+                        "https://github.com/pypa/setuptools/commit/43a9c9bfa6aa626ec2a22540bea28d2ca77964be",
+                        "https://github.com/pypa/setuptools/compare/v65.5.0...v65.5.1",
+                        "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/ADES3NLOE5QJKBLGNZNI2RGVOSQXA37R/",
+                        "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/YNA2BAH2ACBZ4TVJZKFLCR7L23BG5C3H/",
+                        "https://pyup.io/posts/pyup-discovers-redos-vulnerabilities-in-top-python-packages/",
+                        "https://pyup.io/vulnerabilities/CVE-2022-40897/52495/",
+                        "https://security.netapp.com/advisory/ntap-20230214-0001/",
+                        "https://security.netapp.com/advisory/ntap-20240621-0006/",
+                        "https://lists.debian.org/debian-lts-announce/2024/09/msg00018.html"
+                    ],
+                    "description": "Python Packaging Authority (PyPA) setuptools before 65.5.1 allows remote attackers to cause a denial of service via HTML in a crafted package or custom PackageIndex page. There is a Regular Expression Denial of Service (ReDoS) in package_index.py.",
+                    "cvss": [
+                        {
+                            "source": "nvd@nist.gov",
+                            "type": "Primary",
+                            "version": "3.1",
+                            "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                            "metrics": {
+                                "baseScore": 5.9,
+                                "exploitabilityScore": 2.3,
+                                "impactScore": 3.6
+                            },
+                            "vendorMetadata": {}
+                        },
+                        {
+                            "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+                            "type": "Secondary",
+                            "version": "3.1",
+                            "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                            "metrics": {
+                                "baseScore": 5.9,
+                                "exploitabilityScore": 2.3,
+                                "impactScore": 3.6
+                            },
+                            "vendorMetadata": {}
+                        }
+                    ],
+                    "epss": [
+                        {
+                            "cve": "CVE-2022-40897",
+                            "epss": 0.00515,
+                            "percentile": 0.65988,
+                            "date": "2026-01-20"
+                        }
+                    ],
+                    "cwes": [
+                        {
+                            "cve": "CVE-2022-40897",
+                            "cwe": "CWE-1333",
+                            "source": "nvd@nist.gov",
+                            "type": "Primary"
+                        },
+                        {
+                            "cve": "CVE-2022-40897",
+                            "cwe": "CWE-1333",
+                            "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+                            "type": "Secondary"
+                        }
+                    ]
+                }
+            ],
+            "matchDetails": [
+                {
+                    "type": "exact-direct-match",
+                    "matcher": "python-matcher",
+                    "searchedBy": {
+                        "language": "python",
+                        "namespace": "github:language:python",
+                        "package": {
+                            "name": "setuptools",
+                            "version": "63.2.0"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "GHSA-r9hx-vwmv-q579",
+                        "versionConstraint": "<65.5.1 (python)"
+                    },
+                    "fix": {
+                        "suggestedVersion": "65.5.1"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "797b23a436056b9e",
+                "name": "setuptools",
+                "version": "63.2.0",
+                "type": "python",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/METADATA",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/METADATA",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/RECORD",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/RECORD",
+                        "annotations": {
+                            "evidence": "supporting"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/top_level.txt",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/top_level.txt",
+                        "annotations": {
+                            "evidence": "supporting"
+                        }
+                    }
+                ],
+                "language": "python",
+                "licenses": [
+                    "MIT"
+                ],
+                "cpes": [
+                    "cpe:2.3:a:python:setuptools:63.2.0:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:pypi/setuptools@63.2.0",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "CVE-2025-1594",
+                "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2025-1594",
+                "namespace": "nvd:cpe",
+                "severity": "High",
+                "urls": [
+                    "https://ffmpeg.org/",
+                    "https://trac.ffmpeg.org/attachment/ticket/11418/poc",
+                    "https://trac.ffmpeg.org/ticket/11418#comment:3",
+                    "https://vuldb.com/?ctiid.296589",
+                    "https://vuldb.com/?id.296589",
+                    "https://vuldb.com/?submit.496929"
+                ],
+                "description": "A vulnerability, which was classified as critical, was found in FFmpeg up to 7.1. This affects the function ff_aac_search_for_tns of the file libavcodec/aacenc_tns.c of the component AAC Encoder. The manipulation leads to stack-based buffer overflow. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used.",
+                "cvss": [
+                    {
+                        "source": "nvd@nist.gov",
+                        "type": "Primary",
+                        "version": "3.1",
+                        "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                        "metrics": {
+                            "baseScore": 8.8,
+                            "exploitabilityScore": 2.9,
+                            "impactScore": 5.9
+                        },
+                        "vendorMetadata": {}
+                    },
+                    {
+                        "source": "cna@vuldb.com",
+                        "type": "Secondary",
+                        "version": "4.0",
+                        "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+                        "metrics": {
+                            "baseScore": 5.3
+                        },
+                        "vendorMetadata": {}
+                    },
+                    {
+                        "source": "cna@vuldb.com",
+                        "type": "Secondary",
+                        "version": "3.1",
+                        "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L",
+                        "metrics": {
+                            "baseScore": 6.3,
+                            "exploitabilityScore": 2.9,
+                            "impactScore": 3.4
+                        },
+                        "vendorMetadata": {}
+                    },
+                    {
+                        "source": "cna@vuldb.com",
+                        "type": "Secondary",
+                        "version": "2.0",
+                        "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+                        "metrics": {
+                            "baseScore": 7.5,
+                            "exploitabilityScore": 10,
+                            "impactScore": 6.5
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2025-1594",
+                        "epss": 0.00349,
+                        "percentile": 0.56839,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2025-1594",
+                        "cwe": "CWE-119",
+                        "source": "cna@vuldb.com",
+                        "type": "Primary"
+                    },
+                    {
+                        "cve": "CVE-2025-1594",
+                        "cwe": "CWE-121",
+                        "source": "cna@vuldb.com",
+                        "type": "Primary"
+                    },
+                    {
+                        "cve": "CVE-2025-1594",
+                        "cwe": "CWE-787",
+                        "source": "nvd@nist.gov",
+                        "type": "Primary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "7.1.2"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "7.1.2",
+                            "date": "2025-09-18",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.25258875
+            },
+            "relatedVulnerabilities": [],
+            "matchDetails": [
+                {
+                    "type": "cpe-match",
+                    "matcher": "stock-matcher",
+                    "searchedBy": {
+                        "namespace": "nvd:cpe",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                        ],
+                        "package": {
+                            "name": "ffmpeg",
+                            "version": "7.1.1"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "CVE-2025-1594",
+                        "versionConstraint": ">= 3.4.0, < 7.1.2 (unknown)",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*"
+                        ]
+                    },
+                    "fix": {
+                        "suggestedVersion": "7.1.2"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "efd32f8f4c10be64",
+                "name": "ffmpeg",
+                "version": "7.1.1",
+                "type": "binary",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    }
+                ],
+                "language": "",
+                "licenses": [],
+                "cpes": [
+                    "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:generic/ffmpeg@7.1.1",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "GHSA-5rjg-fvgr-3xxf",
+                "dataSource": "https://github.com/advisories/GHSA-5rjg-fvgr-3xxf",
+                "namespace": "github:language:python",
+                "severity": "High",
+                "urls": [],
+                "description": "setuptools has a path traversal vulnerability in PackageIndex.download that leads to Arbitrary File Write",
+                "cvss": [],
+                "epss": [
+                    {
+                        "cve": "CVE-2025-47273",
+                        "epss": 0.00148,
+                        "percentile": 0.35709,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2025-47273",
+                        "cwe": "CWE-22",
+                        "source": "security-advisories@github.com",
+                        "type": "Secondary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "78.1.1"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "78.1.1",
+                            "date": "2025-05-22",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.11099999999999999
+            },
+            "relatedVulnerabilities": [
+                {
+                    "id": "CVE-2025-47273",
+                    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2025-47273",
+                    "namespace": "nvd:cpe",
+                    "severity": "High",
+                    "urls": [
+                        "https://github.com/pypa/setuptools/blob/6ead555c5fb29bc57fe6105b1bffc163f56fd558/setuptools/package_index.py#L810C1-L825C88",
+                        "https://github.com/pypa/setuptools/commit/250a6d17978f9f6ac3ac887091f2d32886fbbb0b",
+                        "https://github.com/pypa/setuptools/issues/4946",
+                        "https://github.com/pypa/setuptools/security/advisories/GHSA-5rjg-fvgr-3xxf",
+                        "https://lists.debian.org/debian-lts-announce/2025/05/msg00035.html"
+                    ],
+                    "description": "setuptools is a package that allows users to download, build, install, upgrade, and uninstall Python packages. A path traversal vulnerability in `PackageIndex` is present in setuptools prior to version 78.1.1. An attacker would be allowed to write files to arbitrary locations on the filesystem with the permissions of the process running the Python code, which could escalate to remote code execution depending on the context. Version 78.1.1 fixes the issue.",
+                    "cvss": [
+                        {
+                            "source": "nvd@nist.gov",
+                            "type": "Primary",
+                            "version": "3.1",
+                            "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+                            "metrics": {
+                                "baseScore": 8.8,
+                                "exploitabilityScore": 2.9,
+                                "impactScore": 5.9
+                            },
+                            "vendorMetadata": {}
+                        },
+                        {
+                            "source": "security-advisories@github.com",
+                            "type": "Secondary",
+                            "version": "4.0",
+                            "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+                            "metrics": {
+                                "baseScore": 7.7
+                            },
+                            "vendorMetadata": {}
+                        }
+                    ],
+                    "epss": [
+                        {
+                            "cve": "CVE-2025-47273",
+                            "epss": 0.00148,
+                            "percentile": 0.35709,
+                            "date": "2026-01-20"
+                        }
+                    ],
+                    "cwes": [
+                        {
+                            "cve": "CVE-2025-47273",
+                            "cwe": "CWE-22",
+                            "source": "security-advisories@github.com",
+                            "type": "Secondary"
+                        }
+                    ]
+                }
+            ],
+            "matchDetails": [
+                {
+                    "type": "exact-direct-match",
+                    "matcher": "python-matcher",
+                    "searchedBy": {
+                        "language": "python",
+                        "namespace": "github:language:python",
+                        "package": {
+                            "name": "setuptools",
+                            "version": "63.2.0"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "GHSA-5rjg-fvgr-3xxf",
+                        "versionConstraint": "<78.1.1 (python)"
+                    },
+                    "fix": {
+                        "suggestedVersion": "78.1.1"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "797b23a436056b9e",
+                "name": "setuptools",
+                "version": "63.2.0",
+                "type": "python",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/METADATA",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/METADATA",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/RECORD",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/RECORD",
+                        "annotations": {
+                            "evidence": "supporting"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/top_level.txt",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/top_level.txt",
+                        "annotations": {
+                            "evidence": "supporting"
+                        }
+                    }
+                ],
+                "language": "python",
+                "licenses": [
+                    "MIT"
+                ],
+                "cpes": [
+                    "cpe:2.3:a:python:setuptools:63.2.0:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:pypi/setuptools@63.2.0",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "CVE-2025-22921",
+                "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2025-22921",
+                "namespace": "nvd:cpe",
+                "severity": "Medium",
+                "urls": [
+                    "https://trac.ffmpeg.org/ticket/11393",
+                    "https://lists.debian.org/debian-lts-announce/2025/02/msg00037.html"
+                ],
+                "description": "FFmpeg git-master,N-113007-g8d24a28d06 was discovered to contain a segmentation violation via the component /libavcodec/jpeg2000dec.c.",
+                "cvss": [
+                    {
+                        "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+                        "type": "Secondary",
+                        "version": "3.1",
+                        "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+                        "metrics": {
+                            "baseScore": 6.5,
+                            "exploitabilityScore": 2.9,
+                            "impactScore": 3.6
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2025-22921",
+                        "epss": 0.00169,
+                        "percentile": 0.3838,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2025-22921",
+                        "cwe": "CWE-476",
+                        "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+                        "type": "Secondary"
+                    }
+                ],
+                "fix": {
+                    "versions": [],
+                    "state": ""
+                },
+                "advisories": [],
+                "risk": 0.097175
+            },
+            "relatedVulnerabilities": [],
+            "matchDetails": [
+                {
+                    "type": "cpe-match",
+                    "matcher": "stock-matcher",
+                    "searchedBy": {
+                        "namespace": "nvd:cpe",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                        ],
+                        "package": {
+                            "name": "ffmpeg",
+                            "version": "7.1.1"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "CVE-2025-22921",
+                        "versionConstraint": "= 7.0,= 7.0.1,= 7.0.2,= 7.0.3,= 7.1,= 7.1-dev,= 7.1.1,= 7.1.2,= 7.1.3,= 7.2-dev,= 8.0,= 8.0.1,= 8.1-dev (unknown)",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*"
+                        ]
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "efd32f8f4c10be64",
+                "name": "ffmpeg",
+                "version": "7.1.1",
+                "type": "binary",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    }
+                ],
+                "language": "",
+                "licenses": [],
+                "cpes": [
+                    "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:generic/ffmpeg@7.1.1",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "CVE-2025-59733",
+                "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2025-59733",
+                "namespace": "nvd:cpe",
+                "severity": "High",
+                "urls": [
+                    "https://issuetracker.google.com/436511754"
+                ],
+                "description": "When decoding an OpenEXR file that uses DWAA or DWAB compression, there's an implicit assumption that all image channels have the same pixel type (and size), and that if there are four channels, the first four are \"B\", \"G\", \"R\" and \"A\". The channel parsing code can be found in decode_header. The buffer td->uncompressed_data is allocated in decode_block based on the xsize, ysize and computed current_channel_offset.\n\nThe function dwa_uncompress then assumes at [5] that if there are 4 channels, these are \"B\", \"G\", \"R\" and \"A\", and in the calculations at [6] and [7] that all channels are of the same type, which matches the type of the main color channels.\n\nIf we set the main color channels to a 4-byte type and add duplicate or unknown channels of the 2-byte EXR_HALF type, then the addition at [7] will increment the pointer by 4-bytes * xsize * nb_channels, which will exceed the allocated buffer.\n\n\n\n\n\nWe recommend upgrading to version 8.0 or beyond.",
+                "cvss": [
+                    {
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary",
+                        "version": "4.0",
+                        "vector": "CVSS:4.0/AV:A/AC:H/AT:N/PR:N/UI:P/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+                        "metrics": {
+                            "baseScore": 8.7
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2025-59733",
+                        "epss": 0.00026,
+                        "percentile": 0.06377,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2025-59733",
+                        "cwe": "CWE-787",
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "8.0"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "8.0",
+                            "date": "2025-10-08",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.021059999999999995
+            },
+            "relatedVulnerabilities": [],
+            "matchDetails": [
+                {
+                    "type": "cpe-match",
+                    "matcher": "stock-matcher",
+                    "searchedBy": {
+                        "namespace": "nvd:cpe",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                        ],
+                        "package": {
+                            "name": "ffmpeg",
+                            "version": "7.1.1"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "CVE-2025-59733",
+                        "versionConstraint": ">= 7.1.1, < 8.0 (unknown)",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*"
+                        ]
+                    },
+                    "fix": {
+                        "suggestedVersion": "8.0"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "efd32f8f4c10be64",
+                "name": "ffmpeg",
+                "version": "7.1.1",
+                "type": "binary",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    }
+                ],
+                "language": "",
+                "licenses": [],
+                "cpes": [
+                    "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:generic/ffmpeg@7.1.1",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "CVE-2025-59729",
+                "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2025-59729",
+                "namespace": "nvd:cpe",
+                "severity": "Medium",
+                "urls": [
+                    "https://issuetracker.google.com/433513232"
+                ],
+                "description": "When parsing the header for a DHAV file, there's an integer underflow in offset calculation that leads to reading the duration from before the start of the allocated buffer.\n\nIf we load a DHAV file that is larger than MAX_DURATION_BUFFER_SIZE bytes (0x100000) for example 0x101000 bytes, then at [0] we have size = 0x101000. At [1] we have end_buffer_size = 0x100000, and at [2] we have end_buffer_pos = 0x1000.\n\nThe loop then scans backwards through the buffer looking for the dhav tag; when it is found, we'll calculate end_pos based on a 32-bit offset read from the buffer.\n\nThere is subsequently a check [3] that end_pos is within the section of the file that has been copied into end_buffer, but it only correctly handles the cases where end_pos is before the start of the file or after the section copied into end_buffer, and not the case where end_pos is within the the file, but before the section copied into end_buffer. If we provide such an offset, (end_pos - end_buffer_pos) can underflow, resulting in the subsequent access at [4] occurring before the beginning of the allocation.\n\nWe recommend upgrading to version 8.0 or beyond.",
+                "cvss": [
+                    {
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary",
+                        "version": "4.0",
+                        "vector": "CVSS:4.0/AV:A/AC:H/AT:P/PR:L/UI:P/VC:L/VI:H/VA:N/SC:L/SI:H/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+                        "metrics": {
+                            "baseScore": 5.7
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2025-59729",
+                        "epss": 0.00034,
+                        "percentile": 0.09678,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2025-59729",
+                        "cwe": "CWE-787",
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "8.0"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "8.0",
+                            "date": "2025-10-08",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.018190000000000005
+            },
+            "relatedVulnerabilities": [],
+            "matchDetails": [
+                {
+                    "type": "cpe-match",
+                    "matcher": "stock-matcher",
+                    "searchedBy": {
+                        "namespace": "nvd:cpe",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                        ],
+                        "package": {
+                            "name": "ffmpeg",
+                            "version": "7.1.1"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "CVE-2025-59729",
+                        "versionConstraint": ">= a218cafe4d3be005ab0c61130f90db4d21afb5db, < 8.0 (unknown)",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*"
+                        ]
+                    },
+                    "fix": {
+                        "suggestedVersion": "8.0"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "efd32f8f4c10be64",
+                "name": "ffmpeg",
+                "version": "7.1.1",
+                "type": "binary",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    }
+                ],
+                "language": "",
+                "licenses": [],
+                "cpes": [
+                    "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:generic/ffmpeg@7.1.1",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "CVE-2025-59731",
+                "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2025-59731",
+                "namespace": "nvd:cpe",
+                "severity": "Medium",
+                "urls": [
+                    "https://issuetracker.google.com/436510153"
+                ],
+                "description": "When decoding an OpenEXR file that uses DWAA or DWAB compression, the specified raw length of run-length-encoded data is not checked when using it to calculate the output data.\n\nWe read rle_raw_size from the input file at [0], we decompress and decode into the buffer td->rle_raw_data of size rle_raw_size at [1], and then at [2] we will access entries in this buffer up to (td->xsize - 1) * (td->ysize - 1) + rle_raw_size / 2, which may exceed rle_raw_size.\n\n\n\n\nWe recommend upgrading to version 8.0 or beyond.",
+                "cvss": [
+                    {
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary",
+                        "version": "4.0",
+                        "vector": "CVSS:4.0/AV:A/AC:H/AT:N/PR:L/UI:P/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+                        "metrics": {
+                            "baseScore": 6.9
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2025-59731",
+                        "epss": 0.0003,
+                        "percentile": 0.08081,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2025-59731",
+                        "cwe": "CWE-787",
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "8.0"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "8.0",
+                            "date": "2025-10-08",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.017849999999999998
+            },
+            "relatedVulnerabilities": [],
+            "matchDetails": [
+                {
+                    "type": "cpe-match",
+                    "matcher": "stock-matcher",
+                    "searchedBy": {
+                        "namespace": "nvd:cpe",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                        ],
+                        "package": {
+                            "name": "ffmpeg",
+                            "version": "7.1.1"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "CVE-2025-59731",
+                        "versionConstraint": ">= 7.1.1, < 8.0 (unknown)",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*"
+                        ]
+                    },
+                    "fix": {
+                        "suggestedVersion": "8.0"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "efd32f8f4c10be64",
+                "name": "ffmpeg",
+                "version": "7.1.1",
+                "type": "binary",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    }
+                ],
+                "language": "",
+                "licenses": [],
+                "cpes": [
+                    "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:generic/ffmpeg@7.1.1",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "CVE-2025-59732",
+                "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2025-59732",
+                "namespace": "nvd:cpe",
+                "severity": "High",
+                "urls": [
+                    "https://issuetracker.google.com/436510316"
+                ],
+                "description": "When decoding an OpenEXR file that uses DWAA or DWAB compression, there's an implicit assumption that the height and width are divisible by 8.\n\nIf the height or width of the image is not divisible by 8, the copy loops at [0] and [1] will continue to write until the next multiple of 8.\n\nThe buffer td->uncompressed_data is allocated in decode_block based on the precise height and width of the image, so the \"rounded-up\" multiple of 8 in the copy loop can exceed the buffer bounds, and the write block starting at [2] can corrupt following heap memory.\n\n\n\nWe recommend upgrading to version 8.0 or beyond.",
+                "cvss": [
+                    {
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary",
+                        "version": "4.0",
+                        "vector": "CVSS:4.0/AV:A/AC:H/AT:N/PR:N/UI:P/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+                        "metrics": {
+                            "baseScore": 8.7
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2025-59732",
+                        "epss": 0.00022,
+                        "percentile": 0.0511,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2025-59732",
+                        "cwe": "CWE-787",
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "8.0"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "8.0",
+                            "date": "2025-10-08",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.01782
+            },
+            "relatedVulnerabilities": [],
+            "matchDetails": [
+                {
+                    "type": "cpe-match",
+                    "matcher": "stock-matcher",
+                    "searchedBy": {
+                        "namespace": "nvd:cpe",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                        ],
+                        "package": {
+                            "name": "ffmpeg",
+                            "version": "7.1.1"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "CVE-2025-59732",
+                        "versionConstraint": ">= 7.1.1, < 8.0 (unknown)",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*"
+                        ]
+                    },
+                    "fix": {
+                        "suggestedVersion": "8.0"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "efd32f8f4c10be64",
+                "name": "ffmpeg",
+                "version": "7.1.1",
+                "type": "binary",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    }
+                ],
+                "language": "",
+                "licenses": [],
+                "cpes": [
+                    "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:generic/ffmpeg@7.1.1",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "CVE-2025-59734",
+                "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2025-59734",
+                "namespace": "nvd:cpe",
+                "severity": "High",
+                "urls": [
+                    "https://issuetracker.google.com/440183164"
+                ],
+                "description": "It is possible to cause an use-after-free write in SANM decoding with a carefully crafted animation using subversion <2.\n\nWhen a STOR chunk is present, a subsequent FOBJ chunk will be saved in ctx->stored_frame. Stored frames can later be referenced by FTCH chunks. For files using subversion < 2, the undecoded frame is stored, and decoded again when the FTCH chunks are parsed. However, in process_frame_obj if the frame has an invalid size, there’s an early return, with a value of 0. \n\nThis causes the code in decode_frame to still store the raw frame buffer into ctx->stored_frame. Leaving ctx->has_dimensions set to false.\n\nA subsequent chunk with type FTCH would call process_ftch and decode that frame obj again, adding to the top/left values and calling process_frame_obj again.\nGiven that we never set ctx->have_dimensions before, this time we set the dimensions, calling init_buffers, which can reallocate the buffer in ctx->stored_frame, freeing the previous one. However, the GetByteContext object gb still holds a reference to the old buffer.\n\n\n\n\nFinally, when the code tries to decode the frame, codecs that accept a GetByteContext as a parameter will trigger a use-after-free read when using gb.\n\nGetByteContext is only used for reading bytes, so at most one could read invalid data. There are no heap allocations between the free and when the object is accessed. However, upon returning to process_ftch, the code restores the original values for top/left in stored_frame, writing 4 bytes to the freed data at offset 6, potentially corrupting the allocator’s metadata.\n\nThis issue can be triggered just by probing whether a file has the sanm format.\n\n\n\n\n\n\n\nWe recommend upgrading to version 8.0 or beyond.",
+                "cvss": [
+                    {
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary",
+                        "version": "4.0",
+                        "vector": "CVSS:4.0/AV:A/AC:H/AT:N/PR:N/UI:P/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+                        "metrics": {
+                            "baseScore": 8.7
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2025-59734",
+                        "epss": 0.00022,
+                        "percentile": 0.0511,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2025-59734",
+                        "cwe": "CWE-416",
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "8.0"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "8.0",
+                            "date": "2025-10-08",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.01782
+            },
+            "relatedVulnerabilities": [],
+            "matchDetails": [
+                {
+                    "type": "cpe-match",
+                    "matcher": "stock-matcher",
+                    "searchedBy": {
+                        "namespace": "nvd:cpe",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                        ],
+                        "package": {
+                            "name": "ffmpeg",
+                            "version": "7.1.1"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "CVE-2025-59734",
+                        "versionConstraint": ">= 7.1.1, < 8.0 (unknown)",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*"
+                        ]
+                    },
+                    "fix": {
+                        "suggestedVersion": "8.0"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "efd32f8f4c10be64",
+                "name": "ffmpeg",
+                "version": "7.1.1",
+                "type": "binary",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    }
+                ],
+                "language": "",
+                "licenses": [],
+                "cpes": [
+                    "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:generic/ffmpeg@7.1.1",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "CVE-2025-59730",
+                "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2025-59730",
+                "namespace": "nvd:cpe",
+                "severity": "Medium",
+                "urls": [
+                    "https://issuetracker.google.com/434637586"
+                ],
+                "description": "When decoding a frame for a SANM file (ANIM v0 variant), the decoded data can be larger than the buffer allocated for it.\n\nFrames encoded with codec 48 can specify their resolution (width x height). A buffer of appropriate size is allocated depending on the resolution.\n\nThis codec can encode the frame contents using a run-length encoding algorithm. There are no checks that the decoded frame fits in the allocated buffer, leading to a heap-buffer-overflow.\n\nprocess_frame_obj initializes the buffers based on the frame resolution:\n\n\n\nWe recommend upgrading to version 8.0 or beyond.",
+                "cvss": [
+                    {
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary",
+                        "version": "4.0",
+                        "vector": "CVSS:4.0/AV:A/AC:H/AT:P/PR:L/UI:P/VC:L/VI:H/VA:N/SC:L/SI:H/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+                        "metrics": {
+                            "baseScore": 5.7
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2025-59730",
+                        "epss": 0.0003,
+                        "percentile": 0.08081,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2025-59730",
+                        "cwe": "CWE-787",
+                        "source": "cve-coordination@google.com",
+                        "type": "Secondary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "8.0"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "8.0",
+                            "date": "2025-10-08",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.01605
+            },
+            "relatedVulnerabilities": [],
+            "matchDetails": [
+                {
+                    "type": "cpe-match",
+                    "matcher": "stock-matcher",
+                    "searchedBy": {
+                        "namespace": "nvd:cpe",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                        ],
+                        "package": {
+                            "name": "ffmpeg",
+                            "version": "7.1.1"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "CVE-2025-59730",
+                        "versionConstraint": "< 8.0 (unknown)",
+                        "cpes": [
+                            "cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*"
+                        ]
+                    },
+                    "fix": {
+                        "suggestedVersion": "8.0"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "efd32f8f4c10be64",
+                "name": "ffmpeg",
+                "version": "7.1.1",
+                "type": "binary",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavcodec.61.19.101.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavformat.61.7.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libavutil.59.39.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/cv2/.dylibs/libswresample.5.3.100.dylib",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    }
+                ],
+                "language": "",
+                "licenses": [],
+                "cpes": [
+                    "cpe:2.3:a:ffmpeg:ffmpeg:7.1.1:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:generic/ffmpeg@7.1.1",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "GHSA-38jv-5279-wg99",
+                "dataSource": "https://github.com/advisories/GHSA-38jv-5279-wg99",
+                "namespace": "github:language:python",
+                "severity": "High",
+                "urls": [],
+                "description": "Decompression-bomb safeguards bypassed when following HTTP redirects (streaming API)",
+                "cvss": [],
+                "epss": [
+                    {
+                        "cve": "CVE-2026-21441",
+                        "epss": 0.00018,
+                        "percentile": 0.03565,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2026-21441",
+                        "cwe": "CWE-409",
+                        "source": "security-advisories@github.com",
+                        "type": "Primary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "2.6.3"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "2.6.3",
+                            "date": "2026-01-08",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.0135
+            },
+            "relatedVulnerabilities": [
+                {
+                    "id": "CVE-2026-21441",
+                    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2026-21441",
+                    "namespace": "nvd:cpe",
+                    "severity": "High",
+                    "urls": [
+                        "https://github.com/urllib3/urllib3/commit/8864ac407bba8607950025e0979c4c69bc7abc7b",
+                        "https://github.com/urllib3/urllib3/security/advisories/GHSA-38jv-5279-wg99"
+                    ],
+                    "description": "urllib3 is an HTTP client library for Python. urllib3's streaming API is designed for the efficient handling of large HTTP responses by reading the content in chunks, rather than loading the entire response body into memory at once. urllib3 can perform decoding or decompression based on the HTTP `Content-Encoding` header (e.g., `gzip`, `deflate`, `br`, or `zstd`). When using the streaming API, the library decompresses only the necessary bytes, enabling partial content consumption. Starting in version 1.22 and prior to version 2.6.3, for HTTP redirect responses, the library would read the entire response body to drain the connection and decompress the content unnecessarily. This decompression occurred even before any read methods were called, and configured read limits did not restrict the amount of decompressed data. As a result, there was no safeguard against decompression bombs. A malicious server could exploit this to trigger excessive resource consumption on the client. Applications and libraries are affected when they stream content from untrusted sources by setting `preload_content=False` when they do not disable redirects. Users should upgrade to at least urllib3 v2.6.3, in which the library does not decode content of redirect responses when `preload_content=False`. If upgrading is not immediately possible, disable redirects by setting `redirect=False` for requests to untrusted source.",
+                    "cvss": [
+                        {
+                            "source": "nvd@nist.gov",
+                            "type": "Primary",
+                            "version": "3.1",
+                            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                            "metrics": {
+                                "baseScore": 7.5,
+                                "exploitabilityScore": 3.9,
+                                "impactScore": 3.6
+                            },
+                            "vendorMetadata": {}
+                        },
+                        {
+                            "source": "security-advisories@github.com",
+                            "type": "Secondary",
+                            "version": "4.0",
+                            "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+                            "metrics": {
+                                "baseScore": 8.9
+                            },
+                            "vendorMetadata": {}
+                        }
+                    ],
+                    "epss": [
+                        {
+                            "cve": "CVE-2026-21441",
+                            "epss": 0.00018,
+                            "percentile": 0.03565,
+                            "date": "2026-01-20"
+                        }
+                    ],
+                    "cwes": [
+                        {
+                            "cve": "CVE-2026-21441",
+                            "cwe": "CWE-409",
+                            "source": "security-advisories@github.com",
+                            "type": "Primary"
+                        }
+                    ]
+                }
+            ],
+            "matchDetails": [
+                {
+                    "type": "exact-direct-match",
+                    "matcher": "python-matcher",
+                    "searchedBy": {
+                        "language": "python",
+                        "namespace": "github:language:python",
+                        "package": {
+                            "name": "urllib3",
+                            "version": "2.6.2"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "GHSA-38jv-5279-wg99",
+                        "versionConstraint": ">=1.22,<2.6.3 (python)"
+                    },
+                    "fix": {
+                        "suggestedVersion": "2.6.3"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "4f2df44fb659ad03",
+                "name": "urllib3",
+                "version": "2.6.2",
+                "type": "python",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/urllib3-2.6.2.dist-info/METADATA",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/urllib3-2.6.2.dist-info/METADATA",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/urllib3-2.6.2.dist-info/RECORD",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/urllib3-2.6.2.dist-info/RECORD",
+                        "annotations": {
+                            "evidence": "supporting"
+                        }
+                    }
+                ],
+                "language": "python",
+                "licenses": [
+                    "MIT"
+                ],
+                "cpes": [
+                    "cpe:2.3:a:python:urllib3:2.6.2:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:pypi/urllib3@2.6.2",
+                "upstreams": []
+            }
+        },
+        {
+            "vulnerability": {
+                "id": "GHSA-qmgc-5h2g-mvrw",
+                "dataSource": "https://github.com/advisories/GHSA-qmgc-5h2g-mvrw",
+                "namespace": "github:language:python",
+                "severity": "Medium",
+                "urls": [],
+                "description": "filelock Time-of-Check-Time-of-Use (TOCTOU) Symlink Vulnerability in SoftFileLock",
+                "cvss": [
+                    {
+                        "type": "Secondary",
+                        "version": "3.1",
+                        "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:H",
+                        "metrics": {
+                            "baseScore": 5.3,
+                            "exploitabilityScore": 1.1,
+                            "impactScore": 4.3
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2026-22701",
+                        "epss": 0.00015,
+                        "percentile": 0.02295,
+                        "date": "2026-01-20"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2026-22701",
+                        "cwe": "CWE-59",
+                        "source": "security-advisories@github.com",
+                        "type": "Primary"
+                    },
+                    {
+                        "cve": "CVE-2026-22701",
+                        "cwe": "CWE-362",
+                        "source": "security-advisories@github.com",
+                        "type": "Primary"
+                    },
+                    {
+                        "cve": "CVE-2026-22701",
+                        "cwe": "CWE-367",
+                        "source": "security-advisories@github.com",
+                        "type": "Primary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "3.20.3"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "3.20.3",
+                            "date": "2026-01-14",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.007724999999999999
+            },
+            "relatedVulnerabilities": [
+                {
+                    "id": "CVE-2026-22701",
+                    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2026-22701",
+                    "namespace": "nvd:cpe",
+                    "severity": "Medium",
+                    "urls": [
+                        "https://github.com/tox-dev/filelock/commit/255ed068bc85d1ef406e50a135e1459170dd1bf0",
+                        "https://github.com/tox-dev/filelock/commit/41b42dd2c72aecf7da83dbda5903b8087dddc4d5",
+                        "https://github.com/tox-dev/filelock/security/advisories/GHSA-qmgc-5h2g-mvrw"
+                    ],
+                    "description": "filelock is a platform-independent file lock for Python. Prior to version 3.20.3, a TOCTOU race condition vulnerability exists in the SoftFileLock implementation of the filelock package. An attacker with local filesystem access and permission to create symlinks can exploit a race condition between the permission validation and file creation to cause lock operations to fail or behave unexpectedly. The vulnerability occurs in the _acquire() method between raise_on_not_writable_file() (permission check) and os.open() (file creation). During this race window, an attacker can create a symlink at the lock file path, potentially causing the lock to operate on an unintended target file or leading to denial of service. This issue has been patched in version 3.20.3.",
+                    "cvss": [
+                        {
+                            "source": "security-advisories@github.com",
+                            "type": "Secondary",
+                            "version": "3.1",
+                            "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:H",
+                            "metrics": {
+                                "baseScore": 5.3,
+                                "exploitabilityScore": 1.1,
+                                "impactScore": 4.3
+                            },
+                            "vendorMetadata": {}
+                        }
+                    ],
+                    "epss": [
+                        {
+                            "cve": "CVE-2026-22701",
+                            "epss": 0.00015,
+                            "percentile": 0.02295,
+                            "date": "2026-01-20"
+                        }
+                    ],
+                    "cwes": [
+                        {
+                            "cve": "CVE-2026-22701",
+                            "cwe": "CWE-59",
+                            "source": "security-advisories@github.com",
+                            "type": "Primary"
+                        },
+                        {
+                            "cve": "CVE-2026-22701",
+                            "cwe": "CWE-362",
+                            "source": "security-advisories@github.com",
+                            "type": "Primary"
+                        },
+                        {
+                            "cve": "CVE-2026-22701",
+                            "cwe": "CWE-367",
+                            "source": "security-advisories@github.com",
+                            "type": "Primary"
+                        }
+                    ]
+                }
+            ],
+            "matchDetails": [
+                {
+                    "type": "exact-direct-match",
+                    "matcher": "python-matcher",
+                    "searchedBy": {
+                        "language": "python",
+                        "namespace": "github:language:python",
+                        "package": {
+                            "name": "filelock",
+                            "version": "3.20.1"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "GHSA-qmgc-5h2g-mvrw",
+                        "versionConstraint": "<3.20.3 (python)"
+                    },
+                    "fix": {
+                        "suggestedVersion": "3.20.3"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "dca15c74b0f767ee",
+                "name": "filelock",
+                "version": "3.20.1",
+                "type": "python",
+                "locations": [
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/filelock-3.20.1.dist-info/METADATA",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/filelock-3.20.1.dist-info/METADATA",
+                        "annotations": {
+                            "evidence": "primary"
+                        }
+                    },
+                    {
+                        "path": "/services/docling-worker/.venv/lib/python3.10/site-packages/filelock-3.20.1.dist-info/RECORD",
+                        "accessPath": "/services/docling-worker/.venv/lib/python3.10/site-packages/filelock-3.20.1.dist-info/RECORD",
+                        "annotations": {
+                            "evidence": "supporting"
+                        }
+                    }
+                ],
+                "language": "python",
+                "licenses": [
+                    "Unlicense"
+                ],
+                "cpes": [
+                    "cpe:2.3:a:python-filelock:python-filelock:3.20.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python-filelock:python_filelock:3.20.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python_filelock:python-filelock:3.20.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python_filelock:python_filelock:3.20.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:filelock:python-filelock:3.20.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:filelock:python_filelock:3.20.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python-filelock:filelock:3.20.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python_filelock:filelock:3.20.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python:python-filelock:3.20.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python:python_filelock:3.20.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:filelock:filelock:3.20.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python:filelock:3.20.1:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:pypi/filelock@3.20.1",
+                "upstreams": []
+            }
+        }
+    ],
+    "source": {
+        "type": "directory",
+        "target": "."
+    },
+    "distro": {
+        "name": "",
+        "version": "",
+        "idLike": null
+    },
+    "descriptor": {
+        "name": "grype",
+        "version": "0.105.0",
+        "configuration": {
+            "output": [
+                "json"
+            ],
+            "file": "",
+            "pretty": false,
+            "distro": "",
+            "add-cpes-if-none": false,
+            "output-template-file": "",
+            "check-for-app-update": true,
+            "only-fixed": false,
+            "only-notfixed": false,
+            "ignore-wontfix": "",
+            "platform": "",
+            "search": {
+                "scope": "squashed",
+                "unindexed-archives": false,
+                "indexed-archives": true
+            },
+            "ignore": [
+                {
+                    "vulnerability": "",
+                    "include-aliases": false,
+                    "reason": "",
+                    "namespace": "",
+                    "fix-state": "",
+                    "package": {
+                        "name": "kernel-headers",
+                        "version": "",
+                        "language": "",
+                        "type": "rpm",
+                        "location": "",
+                        "upstream-name": "kernel"
+                    },
+                    "vex-status": "",
+                    "vex-justification": "",
+                    "match-type": "exact-indirect-match"
+                },
+                {
+                    "vulnerability": "",
+                    "include-aliases": false,
+                    "reason": "",
+                    "namespace": "",
+                    "fix-state": "",
+                    "package": {
+                        "name": "linux(-.*)?-headers-.*",
+                        "version": "",
+                        "language": "",
+                        "type": "deb",
+                        "location": "",
+                        "upstream-name": "linux.*"
+                    },
+                    "vex-status": "",
+                    "vex-justification": "",
+                    "match-type": "exact-indirect-match"
+                },
+                {
+                    "vulnerability": "",
+                    "include-aliases": false,
+                    "reason": "",
+                    "namespace": "",
+                    "fix-state": "",
+                    "package": {
+                        "name": "linux-libc-dev",
+                        "version": "",
+                        "language": "",
+                        "type": "deb",
+                        "location": "",
+                        "upstream-name": "linux"
+                    },
+                    "vex-status": "",
+                    "vex-justification": "",
+                    "match-type": "exact-indirect-match"
+                }
+            ],
+            "exclude": [],
+            "externalSources": {
+                "enable": false,
+                "maven": {
+                    "searchUpstreamBySha1": true,
+                    "baseUrl": "https://search.maven.org/solrsearch/select",
+                    "rateLimit": 300000000
+                }
+            },
+            "match": {
+                "java": {
+                    "using-cpes": false
+                },
+                "jvm": {
+                    "using-cpes": true
+                },
+                "dotnet": {
+                    "using-cpes": false
+                },
+                "golang": {
+                    "using-cpes": false,
+                    "always-use-cpe-for-stdlib": true,
+                    "allow-main-module-pseudo-version-comparison": false
+                },
+                "javascript": {
+                    "using-cpes": false
+                },
+                "python": {
+                    "using-cpes": false
+                },
+                "ruby": {
+                    "using-cpes": false
+                },
+                "rust": {
+                    "using-cpes": false
+                },
+                "stock": {
+                    "using-cpes": true
+                }
+            },
+            "fail-on-severity": "",
+            "registry": {
+                "insecure-skip-tls-verify": false,
+                "insecure-use-http": false,
+                "ca-cert": ""
+            },
+            "show-suppressed": false,
+            "by-cve": false,
+            "SortBy": {
+                "sort-by": "risk"
+            },
+            "name": "",
+            "default-image-pull-source": "",
+            "from": null,
+            "vex-documents": [],
+            "vex-add": [],
+            "match-upstream-kernel-headers": false,
+            "fix-channel": {
+                "redhat-eus": {
+                    "apply": "auto",
+                    "versions": ">= 8.0"
+                }
+            },
+            "timestamp": true,
+            "db": {
+                "cache-dir": "/Users/paul/Library/Caches/grype/db",
+                "update-url": "https://grype.anchore.io/databases",
+                "ca-cert": "",
+                "auto-update": true,
+                "validate-by-hash-on-start": true,
+                "validate-age": true,
+                "max-allowed-built-age": 432000000000000,
+                "require-update-check": false,
+                "update-available-timeout": 30000000000,
+                "update-download-timeout": 300000000000,
+                "max-update-check-frequency": 7200000000000
+            },
+            "exp": {},
+            "dev": {
+                "db": {
+                    "debug": false
+                }
+            }
+        },
+        "db": {
+            "status": {
+                "schemaVersion": "v6.1.3",
+                "from": "https://grype.anchore.io/databases/v6/vulnerability-db_v6.1.3_2026-01-21T00:29:53Z_1768976255.tar.zst?checksum=sha256%3A5a19457787d96573ce52cc89866190438a8caa8a92a8713c344e4fc692d65fc2",
+                "built": "2026-01-21T06:17:35Z",
+                "path": "/Users/paul/Library/Caches/grype/db/6/vulnerability.db",
+                "valid": true
+            },
+            "providers": {
+                "alma": {
+                    "captured": "2026-01-21T00:29:53Z",
+                    "input": "xxh64:73fce9af6b3fd365"
+                },
+                "alpine": {
+                    "captured": "2026-01-21T00:29:58Z",
+                    "input": "xxh64:332e4783fe05d1a8"
+                },
+                "amazon": {
+                    "captured": "2026-01-21T00:29:55Z",
+                    "input": "xxh64:2901a0dc4e98eca4"
+                },
+                "arch": {
+                    "captured": "2026-01-21T00:30:00Z",
+                    "input": "xxh64:e3440e0574de7d95"
+                },
+                "bitnami": {
+                    "captured": "2026-01-21T00:30:06Z",
+                    "input": "xxh64:a6571c5a9c9e4d0d"
+                },
+                "chainguard": {
+                    "captured": "2026-01-21T00:29:58Z",
+                    "input": "xxh64:3c52869bf61674a3"
+                },
+                "chainguard-libraries": {
+                    "captured": "2026-01-21T00:29:57Z",
+                    "input": "xxh64:a36c017722da1640"
+                },
+                "debian": {
+                    "captured": "2026-01-21T00:30:06Z",
+                    "input": "xxh64:b23c3aefae783fce"
+                },
+                "echo": {
+                    "captured": "2026-01-21T00:29:55Z",
+                    "input": "xxh64:13d7e06b7b8d1f4b"
+                },
+                "epss": {
+                    "captured": "2026-01-21T00:29:58Z",
+                    "input": "xxh64:c6977a9743300568"
+                },
+                "github": {
+                    "captured": "2026-01-21T00:30:12Z",
+                    "input": "xxh64:9fecd0bce27899e8"
+                },
+                "kev": {
+                    "captured": "2026-01-21T00:29:56Z",
+                    "input": "xxh64:4d63e5d7b1afb4c0"
+                },
+                "mariner": {
+                    "captured": "2026-01-21T00:29:56Z",
+                    "input": "xxh64:537e7e25670d931f"
+                },
+                "minimos": {
+                    "captured": "2026-01-21T00:29:57Z",
+                    "input": "xxh64:c16b15cfc0cff302"
+                },
+                "nvd": {
+                    "captured": "2026-01-21T00:34:09Z",
+                    "input": "xxh64:0586da7f57a9d741"
+                },
+                "oracle": {
+                    "captured": "2026-01-21T00:29:54Z",
+                    "input": "xxh64:34ca0024a9d2cbfb"
+                },
+                "rhel": {
+                    "captured": "2026-01-21T00:31:03Z",
+                    "input": "xxh64:958c327308e8e248"
+                },
+                "sles": {
+                    "captured": "2026-01-21T00:30:22Z",
+                    "input": "xxh64:09eea16394c595a1"
+                },
+                "ubuntu": {
+                    "captured": "2026-01-21T00:30:10Z",
+                    "input": "xxh64:86b27c29da51e8d0"
+                },
+                "wolfi": {
+                    "captured": "2026-01-21T00:29:59Z",
+                    "input": "xxh64:155a3dea1efe7eea"
+                }
+            }
+        },
+        "timestamp": "2026-01-21T14:01:07.595781-05:00"
+    }
+}

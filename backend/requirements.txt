@@ -1,0 +1,2 @@
+# Add Python dependencies here, e.g.:
+# pydantic>=2.0

@@ -1,0 +1,13 @@
+// Common mixins
+@use "./variables" as v;
+
+@mixin focus-ring($color: #3b82f6) {
+  outline: 2px solid $color;
+  outline-offset: 2px;
+}
+
+@mixin container() {
+  max-width: v.$container-max;
+  margin-inline: auto;
+  padding-inline: v.$spacing-unit * 2;
+}
