@@ -196,14 +196,52 @@ body {
   margin-top: 18px;
 }
 
+.chat-input-cta {
+  border: 1px solid rgba(31, 111, 235, 0.28);
+  background: linear-gradient(135deg, rgba(31, 111, 235, 0.1), rgba(249, 115, 22, 0.08));
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.chat-input-cta__title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f2f6b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.chat-input-cta__hint {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
 .chat-input textarea {
   width: 100%;
-  min-height: 96px;
+  min-height: 120px;
   border-radius: 14px;
-  border: 1px solid var(--demo-border);
-  padding: 12px 14px;
+  border: 2px solid rgba(31, 111, 235, 0.45);
+  background: #fff;
+  padding: 14px 16px;
   font-family: var(--demo-font-sans), sans-serif;
+  font-size: 1rem;
+  line-height: 1.45;
   resize: vertical;
+  box-shadow: 0 10px 28px rgba(31, 111, 235, 0.14);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.chat-input .cta-textarea::placeholder {
+  color: rgba(31, 41, 55, 0.65);
+}
+
+.chat-input .cta-textarea:focus {
+  outline: none;
+  border-color: #1f6feb;
+  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.2), 0 14px 32px rgba(31, 111, 235, 0.2);
+  transform: translateY(-1px);
 }
 
 .chat-actions {
@@ -214,14 +252,14 @@ body {
 }
 
 .btn-primary {
-  background: var(--demo-accent);
+  background: linear-gradient(135deg, #1557e5 0%, #2f7bff 100%);
   color: #fff;
   border: none;
   padding: 10px 16px;
   border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
   box-shadow: 0 12px 26px var(--demo-glow);
 }
 
@@ -233,6 +271,36 @@ body {
 
 .btn-primary:hover:not(:disabled) {
   transform: translateY(-1px);
+}
+
+.btn-primary.is-working,
+.btn-primary.is-working:disabled {
+  opacity: 1;
+  cursor: progress;
+  background: linear-gradient(110deg, #ff5f1f 0%, #ff2f63 45%, #7c3aed 100%);
+  background-size: 220% 220%;
+  box-shadow: 0 0 0 3px rgba(255, 95, 31, 0.25), 0 0 24px rgba(255, 47, 99, 0.5),
+    0 16px 34px rgba(124, 58, 237, 0.55);
+  animation: send-working-gradient 900ms linear infinite, send-working-pulse 1200ms ease-in-out infinite;
+}
+
+@keyframes send-working-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes send-working-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
 }
 
 .btn-secondary {

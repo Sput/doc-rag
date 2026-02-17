@@ -244,7 +244,7 @@ export default function Home() {
               <thead>
                 <tr>
                   <th>Evidence</th>
-                  <th>Control</th>
+                  <th style={{ textAlign: 'center' }}>Control</th>
                   <th>Audit</th>
                 </tr>
               </thead>
@@ -252,12 +252,8 @@ export default function Home() {
                 {rows.slice(0, 50).map((r, idx) => (
                   <tr key={r.evidence_request_id || idx}>
                     <td style={{ minWidth: 240 }}>{r.evidence_description || '—'}</td>
-                    <td style={{ minWidth: 220 }}>
-                      {r.control_name || '—'} {r.control_uuid ? `(${r.control_uuid})` : ''}
-                    </td>
-                    <td style={{ minWidth: 220 }}>
-                      {r.audit_name || '—'} {r.audit_uuid ? `(${r.audit_uuid})` : ''}
-                    </td>
+                    <td style={{ minWidth: 220, textAlign: 'center' }}>{r.control_name || '—'}</td>
+                    <td style={{ minWidth: 220 }}>{r.audit_name || '—'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -309,11 +305,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="demo-grid">
+        <section>
           <div className="demo-card">
             <div className="chat-header">
               <div className="chat-title">RAG Conversation</div>
-              <span className="demo-kicker">Live Retrieval</span>
+              <span className="demo-kicker">Ask Your Question</span>
             </div>
             <div className="chat-window">
               {messages.map((message, index) => (
@@ -327,21 +323,35 @@ export default function Home() {
               ))}
             </div>
             <form className="chat-input" onSubmit={handleSubmit}>
+              <div className="chat-input-cta">
+                <p className="chat-input-cta__title">Start here</p>
+                <p className="chat-input-cta__hint">
+                  Enter one audit/security question (there are samples listed above) and click Send.
+                </p>
+              </div>
               <textarea
-                placeholder="Ask about control evidence, vulnerabilities, or SSP coverage..."
+                className="cta-textarea"
+                placeholder="Example: Which SSP sections mention access control and what evidence requests map to them?"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
               />
               <div className="chat-actions">
                 <span className="demo-kicker">OpenAI gpt-4o-mini + pgvector</span>
-                <button className="btn-primary" type="submit" disabled={loading}>
+                <button
+                  className={`btn-primary ${loading ? 'is-working' : ''}`}
+                  type="submit"
+                  disabled={loading}
+                  aria-busy={loading}
+                >
                   {loading ? 'Working…' : 'Send'}
                 </button>
               </div>
               {error && <p className="demo-subtitle">Error: {error}</p>}
             </form>
           </div>
+        </section>
 
+        <section className="demo-grid">
           <div className="demo-card">
             <div className="chat-header">
               <div className="chat-title">Live Retrieval Log</div>
@@ -361,9 +371,9 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
 
-            <div style={{ height: 20 }} />
-
+          <div className="demo-card">
             <div className="chat-header">
               <div className="chat-title">Intermediate Artifacts</div>
               <span className="demo-kicker">Top Matches</span>
