@@ -13,7 +13,7 @@ type SourceRow = {
   source_id: string;
   chunk_index: number;
   content: string;
-  metadata: Record<string, any>;
+  metadata: Record<string, unknown>;
   similarity: number;
 };
 
@@ -21,6 +21,37 @@ type Sources = {
   doc: SourceRow[];
   json: SourceRow[];
   db: SourceRow[];
+};
+
+type RagResponse = {
+  answer: string;
+  sources?: Partial<Sources>;
+};
+
+type VulnerabilityFile = Record<string, unknown>;
+
+type EvidenceRequest = {
+  evidence_request_id?: string;
+  evidence_description?: string;
+  control_name?: string;
+  audit_name?: string;
+};
+
+type EvidenceRequestsResponse = {
+  rows?: EvidenceRequest[];
+};
+
+type VulnerabilityMetadata = {
+  vulnerability?: {
+    id?: string;
+    severity?: string;
+  };
+};
+
+type DbMetadata = {
+  control_name?: string;
+  evidence_description?: string;
+  audit_name?: string;
 };
 
 const PROMPTS = [
@@ -66,7 +97,7 @@ export default function Home() {
         const text = await res.text();
         throw new Error(text || 'Request failed.');
       }
-      return res.json();
+      return res.json() as Promise<RagResponse>;
     });
 
     const logSequence = (async () => {
@@ -112,7 +143,7 @@ export default function Home() {
 
   function renderArtifact(row: SourceRow) {
     if (row.source_type === 'json') {
-      const vuln = row.metadata?.vulnerability || {};
+      const vuln = (row.metadata as VulnerabilityMetadata).vulnerability || {};
       return (
         <div className="artifact-card" key={row.id}>
           <h4>{vuln.id || row.source_id}</h4>
@@ -123,11 +154,13 @@ export default function Home() {
     }
 
     if (row.source_type === 'db') {
+      const metadata = row.metadata as DbMetadata;
+
       return (
         <div className="artifact-card" key={row.id}>
-          <h4>{row.metadata?.control_name || row.source_id}</h4>
-          <p>{row.metadata?.evidence_description || row.content.slice(0, 120)}</p>
-          <p>Audit: {row.metadata?.audit_name || 'n/a'}</p>
+          <h4>{metadata.control_name || row.source_id}</h4>
+          <p>{metadata.evidence_description || row.content.slice(0, 120)}</p>
+          <p>Audit: {metadata.audit_name || 'n/a'}</p>
         </div>
       );
     }
@@ -166,7 +199,7 @@ export default function Home() {
   }
 
   function JsonSources() {
-    const [data, setData] = useState<any | null>(null);
+    const [data, setData] = useState<VulnerabilityFile | null>(null);
     const [err, setErr] = useState<string | null>(null);
 
     useEffect(() => {
@@ -208,7 +241,7 @@ export default function Home() {
   }
 
   function DbSources() {
-    const [rows, setRows] = useState<any[]>([]);
+    const [rows, setRows] = useState<EvidenceRequest[]>([]);
     const [err, setErr] = useState<string | null>(null);
 
     useEffect(() => {
@@ -217,7 +250,7 @@ export default function Home() {
         try {
           const res = await fetch('/api/data/evidence-requests');
           if (!res.ok) throw new Error(await res.text());
-          const json = await res.json();
+          const json = (await res.json()) as EvidenceRequestsResponse;
           if (!cancelled) setRows(json.rows || []);
         } catch (e) {
           if (!cancelled) setErr(e instanceof Error ? e.message : 'Failed to load data');

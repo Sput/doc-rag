@@ -4,10 +4,18 @@ import { Suspense, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { supabase } from '@/lib/supabase-browser';
 
+function safeRedirectPath(value: string | null) {
+  if (!value || !value.startsWith('/') || value.startsWith('//')) {
+    return '/';
+  }
+
+  return value;
+}
+
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirectTo = searchParams.get('redirect') || '/dashboard';
+  const redirectTo = safeRedirectPath(searchParams.get('redirect'));
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -17,7 +25,7 @@ function LoginForm() {
     e.preventDefault();
     setError(null);
     setLoading(true);
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
@@ -26,30 +34,18 @@ function LoginForm() {
       setError(error.message);
       return;
     }
-    // Sync session to HTTP-only cookies for server-side auth checks
-    try {
-      await fetch('/api/auth/set', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ event: 'SIGNED_IN', session: data.session }),
-      });
-    } catch {}
     router.replace(redirectTo);
+    router.refresh();
   }
 
-  // Keep cookies in sync on token refresh or sign-out
   useEffect(() => {
     const { data: sub } = supabase.auth.onAuthStateChange(async (event, session) => {
-      try {
-        await fetch('/api/auth/set', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ event, session }),
-        });
-      } catch {}
+      if (event === 'SIGNED_IN' && session) {
+        router.refresh();
+      }
     });
     return () => { sub.subscription.unsubscribe(); };
-  }, []);
+  }, [router]);
 
   return (
     <div className="section">
