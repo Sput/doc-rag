@@ -17,14 +17,6 @@ function redirectToLogin(request: NextRequest) {
   return NextResponse.redirect(url);
 }
 
-function safeRedirectUrl(value: string, requestUrl: string) {
-  if (!value.startsWith('/') || value.startsWith('//')) {
-    return new URL('/', requestUrl);
-  }
-
-  return new URL(value, requestUrl);
-}
-
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
   const { supabaseUrl, supabaseKey } = getSupabaseBrowserEnv();
@@ -56,8 +48,7 @@ export async function updateSession(request: NextRequest) {
   }
 
   if (claims && request.nextUrl.pathname === '/login') {
-    const redirect = request.nextUrl.searchParams.get('redirect') || '/';
-    return NextResponse.redirect(safeRedirectUrl(redirect, request.url));
+    return NextResponse.redirect(new URL('/', request.url));
   }
 
   return response;

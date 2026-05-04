@@ -1,21 +1,11 @@
 'use client';
 
-import { Suspense, useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase-browser';
-
-function safeRedirectPath(value: string | null) {
-  if (!value || !value.startsWith('/') || value.startsWith('//')) {
-    return '/';
-  }
-
-  return value;
-}
 
 function LoginForm() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const redirectTo = safeRedirectPath(searchParams.get('redirect'));
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -34,7 +24,7 @@ function LoginForm() {
       setError(error.message);
       return;
     }
-    router.replace(redirectTo);
+    router.replace('/');
     router.refresh();
   }
 
@@ -97,9 +87,5 @@ function LoginForm() {
 }
 
 export default function LoginPage() {
-  return (
-    <Suspense fallback={<div className="section"><div className="container">Loading…</div></div>}>
-      <LoginForm />
-    </Suspense>
-  );
+  return <LoginForm />;
 }
