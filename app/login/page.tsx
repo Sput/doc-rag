@@ -52,14 +52,18 @@ function LoginForm() {
       <div className="container" style={{ maxWidth: 420 }}>
         <div className="stack-lg">
           <h1 className="h1">Sign in</h1>
-          <form className="stack" onSubmit={onSubmit}>
+          <p className="p">
+            Thank you for visiting my app. Email me at paulknick at gmail dot com for sign-in
+            credentials.
+          </p>
+          <form className="stack" onSubmit={onSubmit} autoComplete="off">
             <div className="field">
               <label htmlFor="email">Email</label>
               <input
                 id="email"
                 type="email"
                 className="input"
-                autoComplete="email"
+                autoComplete="off"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -71,7 +75,7 @@ function LoginForm() {
                 id="password"
                 type="password"
                 className="input"
-                autoComplete="current-password"
+                autoComplete="new-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
