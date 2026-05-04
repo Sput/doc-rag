@@ -300,6 +300,20 @@ export default function Home() {
   return (
     <div className="demo-shell">
       <div className="demo-container">
+        <header
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            marginBottom: 16,
+          }}
+        >
+          <form action="/auth/signout" method="post">
+            <button className="btn-link" type="submit">
+              Sign out
+            </button>
+          </form>
+        </header>
+
         <section className="demo-hero">
           <span className="demo-kicker">Multi-Modal RAG</span>
           <h1 className="demo-title">Security Audit Intelligence</h1>
